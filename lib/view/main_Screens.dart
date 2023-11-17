@@ -30,32 +30,41 @@ class _MainScreensState extends State<MainScreens> {
     return Scaffold(bottomNavigationBar:
         Consumer<MainProvider>(builder: (context, provider, child) {
       return NavigationBar(
-        indicatorColor: orange,
+        indicatorColor: orange2,
         backgroundColor: white,
         surfaceTintColor: white,
-        labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
+        selectedIndex: Provider.of<MainProvider>(context).currentIndex,
+        labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
         onDestinationSelected: (int index) {
           provider.updateIndex(index);
+          setState(() {
+            
+          });
         },
         destinations: [
           NavigationDestination(
-            icon: Icon(Icons.home_outlined),
+            icon: Icon(Icons.home_outlined,size:25),
+            selectedIcon: Icon(Icons.home_outlined,size:25,color: white,),
             label: 'Home',
           ),
           NavigationDestination(
-            icon: Icon(Icons.tips_and_updates),
+            icon: Icon(Icons.tips_and_updates,size:25),
+            selectedIcon: Icon(Icons.tips_and_updates,size:25,color: white,),
             label: 'Search',
           ),
           NavigationDestination(
-            icon: Icon(Icons.message_rounded),
+            icon: Icon(Icons.message_rounded,size:25),
+            selectedIcon: Icon(Icons.message_rounded,size:25,color: white,),
             label: 'Saved',
           ),
           NavigationDestination(
-            icon: Icon(Icons.shopping_cart),
+            icon: Icon(Icons.shopping_cart,size:25),
+            selectedIcon: Icon(Icons.shopping_cart,size:25,color: white,),
             label: 'Info',
           ),
           NavigationDestination(
-            icon: Icon(Icons.account_circle),
+            icon: Icon(Icons.account_circle,size:25),
+            selectedIcon: Icon(Icons.account_circle,size:25,color: white,),
             label: 'Info',
           ),
         ],
