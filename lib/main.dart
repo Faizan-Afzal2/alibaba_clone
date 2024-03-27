@@ -2,8 +2,13 @@
 import 'package:alibaba_clone/controller/providers/interest_provider.dart';
 import 'package:alibaba_clone/controller/providers/main_screen_provider.dart';
 import 'package:alibaba_clone/controller/providers/signup_provider.dart';
+import 'package:alibaba_clone/view/account_page.dart';
 import 'package:alibaba_clone/view/get_started.dart';
+import 'package:alibaba_clone/view/home_page.dart';
 import 'package:alibaba_clone/view/interest_page.dart';
+import 'package:alibaba_clone/view/login_page.dart';
+import 'package:alibaba_clone/view/register_page.dart';
+import 'package:alibaba_clone/view/sign_in_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
@@ -23,10 +28,13 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: ((context) => InterestProvider())),
         ChangeNotifierProvider(create: ((context) => MainProvider())),
       ],
-      child: MaterialApp(
+      child: const MaterialApp(
           debugShowCheckedModeBanner: false,
-        home: GetStarted(),
-        // home: Source(),
+        // home: HomePage(),  
+        // home: SignUp(),  
+        home: AccountPage(),  
+        // home: GetStarted(),
+        // home: Source(),  
       ),
     );
   }

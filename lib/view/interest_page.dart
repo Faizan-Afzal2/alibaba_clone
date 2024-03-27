@@ -1,7 +1,7 @@
 import 'package:alibaba_clone/controller/providers/interest_provider.dart';
 import 'package:alibaba_clone/view/components/common_widgets.dart';
 import 'package:alibaba_clone/view/components/styles.dart';
-import 'package:alibaba_clone/view/main_Screens.dart';
+import 'package:alibaba_clone/main_Screens.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

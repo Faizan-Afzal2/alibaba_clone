@@ -3,9 +3,11 @@
 import 'package:alibaba_clone/view/components/styles.dart';
 import 'package:alibaba_clone/view/interest_page.dart';
 import 'package:alibaba_clone/view/login_page.dart';
+import 'package:alibaba_clone/view/sign_in_page.dart';
 import 'package:flutter/material.dart';
 
 class GetStarted extends StatelessWidget {
+  
   const GetStarted({super.key});
 
   @override
@@ -48,59 +50,64 @@ class GetStarted extends StatelessWidget {
             colorBlendMode: BlendMode.darken,
           ),
           //  Content start from here
-          Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              InkWell(
-                onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context)=> Source()));
-                },
-                child: Container(
-                  padding: EdgeInsets.symmetric(
-                      horizontal: d_width * 0.3, vertical: 15),
-                  decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        colors: [orange2, orange!],
-                      ),
-                      borderRadius: const BorderRadius.all(
-                        Radius.circular(30),
-                      )),
-                  child: const Text(
-                    "Get Started",
-                    style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.white),
+          Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                InkWell(
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=> Source()));
+                  },
+                  child: Container(
+                    padding: EdgeInsets.symmetric(
+                        horizontal: d_width * 0.32, vertical: 10),
+                    decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [orange2, orange],
+                        ),
+                        borderRadius: const BorderRadius.all(
+                          Radius.circular(30),
+                        )),
+                    child: const Text(
+                      "Get Started",
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.white),
+                    ),
                   ),
                 ),
-              ),
-              vspace,
-              InkWell(
-                onTap: () {},
-                child: Container(
-                  padding: EdgeInsets.symmetric(
-                      horizontal: d_width * 0.3, vertical: 10),
-                  decoration: BoxDecoration(
-                      border: Border.all(color: Colors.white),
-                      borderRadius: const BorderRadius.all(
-                        Radius.circular(30),
-                      )),
-                  child: const Text(
-                    "Get Started",
-                    style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.white),
+                vspace,
+                InkWell(
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=>SignUp()));
+                  },
+                  child: Container(
+                    padding: EdgeInsets.symmetric(
+                        horizontal: d_width * 0.28, vertical: 10),
+                    decoration: BoxDecoration(
+                        border: Border.all(color: Colors.white),
+                        borderRadius: const BorderRadius.all(
+                          Radius.circular(30),
+                        )),
+                    child: const Text(
+                      "Login/Register",
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.white),
+                    ),
                   ),
                 ),
-              ),
-
-              vspace
-            ],
+            
+                vspace
+              ],
+            ),
           ),
+         
           Positioned(
-            // left:  1,
-            // top: 20,
+            left:  20,
+            top: 350,
              
               child: Container(
                 child: Row(
@@ -173,7 +180,7 @@ class GetStarted extends StatelessWidget {
                               size: 20,
                             ),
                             Text(
-                              "Purchase protection from payment to delivery",
+                              "Purchase protection from",
                               overflow: TextOverflow.ellipsis,
                               maxLines: 2,
                               style: TextStyle(
@@ -181,7 +188,7 @@ class GetStarted extends StatelessWidget {
                                 fontWeight: FontWeight.w400,
                                 fontSize: 18,
                               ),
-                            )
+                            ),
                           ],
                         )
                       ],
@@ -190,7 +197,6 @@ class GetStarted extends StatelessWidget {
                 ),
               ),
           )
-     
         ],
       ),
     );
